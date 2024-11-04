@@ -12,6 +12,7 @@
             background-image: url('https://img.freepik.com/free-photo/spooky-zombie-hands-window_23-2149130240.jpg?t=st=1730724056~exp=1730727656~hmac=5c02cbb07f435a406574f4561107aba0288cc87bf0a58da78d0a34848572fb13&w=1480');
             background-size: cover;
             background-attachment: fixed;
+            overflow-x: hidden;
         }
         header, footer {
             text-align: center;
@@ -39,26 +40,17 @@
             text-decoration: none;
             border-radius: 5px;
         }
-        .background-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
+        @keyframes fall {
+            0% { top: -100px; }
+            100% { top: 100vh; }
         }
-        .background-elements img {
-            position: absolute;
-            width: 100px;  /* Adjust size as needed */
-            height: auto;
-        }
-        .bats {
-            top: 10px;
-            left: 10px;
-        }
-        .cobwebs {
-            bottom: 10px;
-            right: 10px;
+        .falling-bat {
+            position: fixed;
+            width: 50px;  /* Adjust size as needed */
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: fall 5s linear infinite;
         }
     </style>
 </head>
@@ -108,8 +100,7 @@
     <footer>
         <p>Ready to haunt your home with unique, spooky items? Dive into the Creepy House experience!</p>
     </footer>
-    <div class="background-elements">
-        <img src="https://www.shutterstock.com/shutterstock/videos/1111821501/preview/stock-footage-wall-or-door-with-a-keyhole-the-camera-flies-through-the-keyhole-and-and-reveals-the-green-screen.webm" alt="Falling Key" class="falling-key">
-    </div>
+    <img src="falling-bat.png" alt="Falling Bat" class="falling-bat">
+    <video src="https://www.shutterstock.com/video/clip-1111821501-wall-door-keyhole-camera-flies-through-reveals" autoplay loop muted style="position: fixed; top: -100px; left: 50%; transform: translateX(-50%); width: 50px; animation: fall 5s linear infinite;"></video>
 </body>
 </html>
