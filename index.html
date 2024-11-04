@@ -8,11 +8,12 @@
         body {
             background-color: black;
             color: white;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Arial', sans-serif';
             background-image: url('https://img.freepik.com/free-photo/spooky-zombie-hands-window_23-2149130240.jpg?t=st=1730724056~exp=1730727656~hmac=5c02cbb07f435a406574f4561107aba0288cc87bf0a58da78d0a34848572fb13&w=1480');
             background-size: cover;
             background-attachment: fixed;
             overflow-x: hidden;
+            cursor: none;
         }
         header, footer {
             text-align: center;
@@ -40,17 +41,12 @@
             text-decoration: none;
             border-radius: 5px;
         }
-        @keyframes fall {
-            0% { top: -100px; }
-            100% { top: 100vh; }
-        }
         .falling-bat {
             position: fixed;
-            width: 50px;  /* Adjust size as needed */
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: fall 5s linear infinite;
+            width: 150px;  /* Adjust size as needed */
+            height: auto;
+            pointer-events: none;
+            background: transparent;
         }
     </style>
 </head>
@@ -100,6 +96,13 @@
     <footer>
         <p>Ready to haunt your home with unique, spooky items? Dive into the Creepy House experience!</p>
     </footer>
-    <video src="https://www.shutterstock.com/shutterstock/videos/3428156337/preview/stock-footage-add-a-realistic-touch-to-your-d-modeling-projects-with-an-animated-golden-key.webm" autoplay loop muted style="position: fixed; top: -100px; right: 10%; transform: translateX(-50%); width: 200px; animation: fall 10s linear infinite;"></video>
+    <video src="C:\Users\behap\Downloads\mp4-unscreen.gif" autoplay loop muted class="falling-bat"></video>
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            var fallingBat = document.querySelector('.falling-bat');
+            fallingBat.style.left = e.pageX + 'px';
+            fallingBat.style.top = e.pageY + 'px';
+        });
+    </script>
 </body>
 </html>
