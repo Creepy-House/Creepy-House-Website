@@ -9,6 +9,9 @@
             background-color: black;
             color: white;
             font-family: 'Arial', sans-serif;
+            background-image: url('tinted-window-panes.jpg');
+            background-size: cover;
+            background-attachment: fixed;
         }
         header, footer {
             text-align: center;
@@ -17,6 +20,9 @@
         .container {
             width: 80%;
             margin: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
         }
         .featured-items img {
             width: 100%;
@@ -32,6 +38,25 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
+        }
+        .background-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .background-elements img {
+            position: absolute;
+        }
+        .bats {
+            top: 20%;
+            left: 10%;
+        }
+        .cobwebs {
+            bottom: 10%;
+            right: 10%;
         }
     </style>
 </head>
@@ -81,5 +106,9 @@
     <footer>
         <p>Ready to haunt your home with unique, spooky items? Dive into the Creepy House experience!</p>
     </footer>
+    <div class="background-elements">
+        <img src="bats.png" alt="Hanging Bats" class="bats">
+        <img src="cobwebs.png" alt="Cobwebs" class="cobwebs">
+    </div>
 </body>
 </html>
